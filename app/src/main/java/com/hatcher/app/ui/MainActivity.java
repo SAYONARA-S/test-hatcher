@@ -65,7 +65,7 @@ public class MainActivity extends BaseActivity {
         worldMsgFragment = new WorldMsgFragment();
         fragmentManager = getFragmentManager();
 
-        fragmentManager.beginTransaction().replace(R.id.main_container,new NewsListFragment()).commit();
+//        fragmentManager.beginTransaction().replace(R.id.main_container,new NewsListFragment()).commit();
         /**
          * IM判断注册
          */
@@ -94,7 +94,7 @@ public class MainActivity extends BaseActivity {
 
 
                 worldMsgFragment = new WorldMsgFragment();
-                fragmentManager.beginTransaction().replace(R.id.main_container,new NewsListFragment()).commit();
+//                fragmentManager.beginTransaction().replace(R.id.main_container,new NewsListFragment()).commit();
 
 
                 break;
@@ -140,7 +140,7 @@ public class MainActivity extends BaseActivity {
                         R.mipmap.nav_mine_default), null, null);
 
                 mineFragment  = new MineFragment();
-                fragmentManager.beginTransaction().replace(R.id.main_container,new NewsListFragment()).commit();
+//                fragmentManager.beginTransaction().replace(R.id.main_container,new NewsListFragment()).commit();
 
                 break;
             case R.id.nav_func_btn:

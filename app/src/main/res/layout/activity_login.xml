@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="96dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/login_logo" />
+
+    <!--
+    <TextView
+        android:gravity="center"
+        android:id="@+id/feedback_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/aliwx_color_blue"
+        android:textSize="15sp"
+        android:text="反馈入口"
+        android:padding="10dp"
+        android:layout_alignParentRight="true" />
+-->
+
+    <RelativeLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/logo">
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="225dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dip"
+            android:background="@null"
+            android:gravity="center"
+            android:hint="用户名/手机号"
+            android:inputType="textEmailSubject"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textColorHint="@color/nav_hint_bg"
+            android:textSize="15dp" />
+
+        <ImageView
+            android:id="@+id/line1"
+            android:layout_width="225dp"
+            android:layout_height="10dp"
+            android:layout_below="@+id/username"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/login_edit_bg" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="225dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/username"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dip"
+            android:background="@null"
+            android:gravity="center"
+            android:hint="密码"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textColorHint="@color/nav_hint_bg"
+            android:textSize="15dp" />
+
+        <ImageView
+            android:id="@+id/line2"
+            android:layout_width="225dp"
+            android:layout_height="10dp"
+            android:layout_below="@+id/password"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/login_edit_bg" />
+
+        <ImageView
+            android:id="@+id/login_btn"
+            android:layout_width="225dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/password"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dip"
+            android:scaleType="fitCenter"
+            android:src="@drawable/login_enter_no" />
+
+        <ImageView
+            android:id="@+id/reg_btn"
+            android:layout_width="225dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/login_btn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dip"
+            android:scaleType="fitCenter"
+            android:src="@drawable/selector_reg" />
+
+        <TextView
+            android:id="@+id/rem_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/reg_btn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp"
+            android:gravity="center"
+            android:text="忘记密码"
+            android:textColor="@color/nav_gray_bg"
+            android:textSize="15sp" />
+
+
+        <ImageView
+            android:id="@+id/copy_right"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/login_icon" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

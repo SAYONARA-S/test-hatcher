@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hatcher.app"
     android:versionCode="17"
@@ -10,14 +9,14 @@
 
     <!--SDK 权限申明, 第三方 APP 接入时，请将 com.yuntongxun.ecdemo 替换为自己的包名
     // 和下面的 uses-permission 一起加入到你的 AndroidManifest 文件中。-->
-   <!-- <permission android:name="com.hatcher.app.permission.RECEIVE_MSG"
-        android:protectionLevel="signature"/>
-    <permission android:name="com.hatcher.app.permission.INCOMING_CALL"
-        android:protectionLevel="signature"/>-->
+    <!-- <permission android:name="com.hatcher.app.permission.RECEIVE_MSG"
+         android:protectionLevel="signature"/>
+     <permission android:name="com.hatcher.app.permission.INCOMING_CALL"
+         android:protectionLevel="signature"/>-->
     <!--// 接收 SDK 消息广播权限， 第三方 APP 接入时，请将 com.yuntongxun.ecdemo 替换为自己的包名-->
-  <!--  <uses-permission android:name="com.hatcher.app.permission.RECEIVE_MSG" />
-    &lt;!&ndash; // 如果没有VOIP功能可以忽略&ndash;&gt;
-    <uses-permission android:name="com.hatcher.app.permission.INCOMING_CALL" />-->
+    <!--  <uses-permission android:name="com.hatcher.app.permission.RECEIVE_MSG" />
+      &lt;!&ndash; // 如果没有VOIP功能可以忽略&ndash;&gt;
+      <uses-permission android:name="com.hatcher.app.permission.INCOMING_CALL" />-->
     <!--// 以上为v5.1.9r 版本增加
 
     // 允许程序打开网络sockets-->
@@ -28,7 +27,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <!--// 允许应用写（非读）用户的外部存储器-->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <!--// 允许读取电话的状态-->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <!--// 允许一个程序获取信息有关当前或最近运行的任务，一个缩略的任务状态，是否活动等等-->
@@ -38,10 +37,9 @@
     <!--// 允许应用程序修改全局声音设置的权限-->
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <!--// 允许使用PowerManager的WakeLocks保持进程在休眠时从屏幕消失-->
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <!--// 允许请求访问使用照相设备(如果使用视频通话则必选配置)-->
     <uses-permission android:name="android.permission.CAMERA" />
-
 
 
     <uses-feature
@@ -55,21 +53,21 @@
         android:required="false" />
 
 
-
     <application
         android:name=".ui.BaseApplication"
         android:allowBackup="true"
+        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:supportsRtl="true"
         android:largeHeap="true"
-        android:hardwareAccelerated="true"
+        android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
             android:name="com.hatcher.app.ui.LoginActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="sensorPortrait">
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -77,27 +75,53 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.ForgetPwdActivity" android:screenOrientation="sensorPortrait"/>
-        <activity android:name=".ui.MainActivity" android:screenOrientation="sensorPortrait"
-            android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity
+            android:name=".ui.WelcomeActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".ui.TabMainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.ItemPhotoActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
 
-        <activity android:name="com.hatcher.app.IM.ChatSingleActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.ForgetPwdActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".ui.MainActivity"
+            android:screenOrientation="sensorPortrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
 
+        <activity
+            android:name="com.hatcher.app.IM.ChatSingleActivity"
+            android:screenOrientation="portrait" />
 
 
         <!-- 设置环信应用的AppKey -->
-        <meta-data android:name="EASEMOB_APPKEY"  android:value="sun-cloud-test#testdemo" />
+        <meta-data
+            android:name="EASEMOB_APPKEY"
+            android:value="sun-cloud-test#testdemo" />
         <!-- 声明SDK所需的service SDK核心功能-->
-        <service android:name="com.hyphenate.chat.EMChatService" android:exported="true"/>
+        <service
+            android:name="com.hyphenate.chat.EMChatService"
+            android:exported="true" />
         <!-- 声明SDK所需的receiver -->
         <receiver android:name="com.hyphenate.chat.EMMonitorReceiver">
             <intent-filter>
-                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
-                <data android:scheme="package"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <data android:scheme="package" />
             </intent-filter>
             <!-- 可选filter -->
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.USER_PRESENT" />
             </intent-filter>
         </receiver>
@@ -151,10 +175,6 @@
         &lt;!&ndash; 需要权限声明  &ndash;&gt;-->
 
     </application>
-
-
-
-
 
 
 </manifest>

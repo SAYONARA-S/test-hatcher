@@ -3,4 +3,59 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!-- 公共的 -->
+    <color name="tab_main_text_1">#aaa</color>
+    <color name="tab_main_text_2">#74b5f7</color>
+    <color name="tab_top_text_1">#aaa</color>
+    <color name="tab_top_text_2">#000</color>
+    <color name="tab_top2_text_1">#000</color>
+    <color name="tab_top2_text_2">#fff</color>
+    <color name="white">#fff</color>
+    <color name="black">#000000</color>
+    <color name="title_text_black">#555555</color>
+    <color name="nav_blue_bg">#00afb6</color>
+    <color name="nav_orange_bg">#ff7800</color>
+    <color name="nav_gray_bg">#808080</color>
+    <color name="nav_red_bg">#d7585c</color>
+    <color name="nav_green_bg">#68ba3b</color>
+    <color name="nav_view_bg">#0E1D34</color>
+    <color name="nav_function_bg">#E6E6E6</color>
+    <color name="nav_im_other_bg">#F2F2F2</color>
+
+    <color name="nav_hint_bg">#999999</color>
+    <color name="nav_text_bg">#424242</color>
+    <color name="nav_home_msg_text_bg">#4D4D4D</color>
+
+    <color name="nav_text_color">#737373</color>
+    <color name="radarBgColor">#EFEFEF</color>
+
+    <color name="nav_bg_center_line">#c9c9c9</color>
+
+    <color name="nav_bg_dashboard">#f8f8f8</color>
+    <color name="nav_bg_night_dashboard">#222426</color>
+    <color name="nav_bg_night_text">#aed9e5</color>
+    <color name="nav_gray_dash_menu">#EBEBEB</color>
+
+    <color name="nav_time_dash">#999999</color>
+    <color name="nav_bg_cash">#f8c300</color>
+    <color name="nav_bg_main_cash">#f1bc3e</color>
+    <color name="nav_bg">#66B622</color>
+    <color name="nav_bar_normal">#818E71</color>
+    <color name="nav_text_gray">#B2B2B2</color>
+    <color name="nav_line_gray">#DBDBDB</color>
+    <color name="nav_btn_blue">#56C0E3</color>
+    <color name="nav_search_blue">#30CDD3</color>
+    <color name="nav_search_yellow">#F0C416</color>
+    <color name="nav_bg_gray">#F1F1F1</color>
+    <color name="nav_bg_bottomline">#cccccc</color>
+    <color name="nav_menu_click_green">#62a32b</color>
+
+    <color name="nav_travel_yellow">#edc600</color>
+    <color name="nav_travel_green">#00b800</color>
+    <color name="nav_travel_red">#d95759</color>
+    <color name="red">#d73737</color>
+    <color name="message_orange">#ff6600</color>
+
+
 </resources>

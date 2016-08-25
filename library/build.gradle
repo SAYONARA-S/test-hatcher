@@ -27,8 +27,10 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: '*.jar', dir: 'libs')
+    compile fileTree(dir: 'libs', include: '*.jar')
     compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'com.android.support:design:23.3.0'
     compile files('libs/lame.jar')
+    compile files('libs/badgeview.jar')
+    compile files('libs/base64coder.jar')
 }
