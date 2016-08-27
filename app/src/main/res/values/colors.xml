@@ -22,6 +22,7 @@
     <color name="nav_view_bg">#0E1D34</color>
     <color name="nav_function_bg">#E6E6E6</color>
     <color name="nav_im_other_bg">#F2F2F2</color>
+    <color name="nav_font_green_bg">#B4DD6E</color>
 
     <color name="nav_hint_bg">#999999</color>
     <color name="nav_text_bg">#424242</color>

@@ -173,6 +173,8 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
             }
             break;
             case R.id.reg_btn: {
+                Intent intent = new Intent(mContext, RegisterActivity.class);
+                startActivity(intent);
             }
             break;
             case R.id.rem_btn: {
