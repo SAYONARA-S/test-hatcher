@@ -1,6 +1,7 @@
 package com.hatcher.app.ui.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.hatcher.app.R;
+import com.hatcher.app.ui.PersonInfoActivity;
 
 import java.util.List;
 import java.util.Map;
@@ -49,12 +51,17 @@ public class GridViewAdapter extends BaseAdapter {
         TextView textView = (TextView) convertView.findViewById(R.id.item_function_text);
 
         final Map<String, Object> map = listitem.get(position);
+        final int temp = position;
         imageView.setImageResource((Integer) map.get("image"));
 //        imageView.setBackgroundResource((Integer) map.get("image"));
         textView.setText(map.get("text") + "");
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (temp == 0)
+                {
+                    context.startActivity(new Intent(context, PersonInfoActivity.class));
+                }
                 Toast.makeText(context,map.get("text") + "",Toast.LENGTH_SHORT).show();
             }
         });

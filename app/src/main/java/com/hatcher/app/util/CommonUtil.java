@@ -21,9 +21,6 @@ import com.hatcher.app.service.http.HttpRequest;
 import com.hatcher.app.service.http.util.HttpUtil;
 import com.hatcher.app.ui.BaseApplication;
 
-/**
- * Created by wesley_s on 16/5/6.
- */
 public class CommonUtil {
 
     public static final String APP_SESSION_ID = "session_id";
