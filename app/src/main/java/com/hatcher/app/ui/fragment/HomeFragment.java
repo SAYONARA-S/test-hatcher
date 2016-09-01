@@ -2,6 +2,7 @@ package com.hatcher.app.ui.fragment;
 
 
 import android.app.Activity;
+import android.app.SearchableInfo;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -25,6 +26,7 @@ import com.hatcher.app.service.bean.HomeItemInfoBean;
 import com.hatcher.app.service.bean.ImItemInfoBean;
 import com.hatcher.app.service.http.util.HttpUtil;
 import com.hatcher.app.ui.ItemPhotoActivity;
+import com.hatcher.app.ui.SearchActivity;
 import com.hatcher.app.util.CommonUtil;
 import com.hatcher.app.util.Constants;
 import com.hatcher.app.util.LoginConfig;
@@ -86,6 +88,7 @@ public class HomeFragment extends BaseFragment implements OnRefreshListener {
         activity = getActivity();
         loginConfig.loadConfig(mContext, Constants.LOGIN_CONFIG);
         imageLoader.init(ImageLoaderConfiguration.createDefault(mContext));
+        options = Options.getListOptions();
         CommonUtil.initViewInject(this, HomeFragment.class, getActivity());
 
         initView();
@@ -150,7 +153,7 @@ public class HomeFragment extends BaseFragment implements OnRefreshListener {
                 break;
             case R.id.search_layout:
             {
-
+                startActivity(new Intent(mContext, SearchActivity.class));
             }
             break;
             case R.id.back_layout:

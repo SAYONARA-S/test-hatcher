@@ -14,9 +14,11 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import com.hatcher.app.R;
 import com.hatcher.app.service.http.util.HttpUtil;
+import com.hatcher.app.ui.ModifyPasswordActivity;
 import com.hatcher.app.ui.adapter.GridViewAdapter;
 import com.hatcher.app.util.CommonUtil;
 import com.hatcher.app.util.ViewInject;
@@ -34,23 +36,17 @@ public class MyFragment extends BaseFragment {
 
     private View view;
     @ViewInject
-    private RelativeLayout function_main_layout;
+    private TextView my_info_text;
     @ViewInject
-    private RelativeLayout title_layout;
+    private TextView my_info_des;
     @ViewInject
-    private RelativeLayout function_data_layout;
+    private TextView my_id_text;
     @ViewInject
-    private RelativeLayout back_layout;
+    private RelativeLayout my_page_layout;
     @ViewInject
-    private RelativeLayout search_layout;
+    private RelativeLayout my_photo_layout;
     @ViewInject
-    private ImageView title_image;  // ?? 暂无数据
-    @ViewInject
-    private ImageView back;  // ?? 暂无数据
-    @ViewInject
-    private ImageView search;  // ?? 暂无数据
-    @ViewInject
-    private GridView gview;
+    private RelativeLayout my_settings_layout;
 
     private Context mContext;
     private Activity activity;
@@ -76,6 +72,9 @@ public class MyFragment extends BaseFragment {
 
     @Override
     protected void initView() {
+        my_page_layout.setOnClickListener(this);
+        my_photo_layout.setOnClickListener(this);
+        my_settings_layout.setOnClickListener(this);
 
     }
 
@@ -86,9 +85,15 @@ public class MyFragment extends BaseFragment {
 
     @Override
     public void onClick(View v) {
-        Intent intent = null;
         switch (v.getId()) {
-            case 1:
+            case R.id.my_page_layout:
+                break;
+            case R.id.my_photo_layout:
+                break;
+            case R.id.my_settings_layout:
+                startActivity(new Intent(mContext, ModifyPasswordActivity.class));
+                break;
+            default:
                 break;
         }
     }

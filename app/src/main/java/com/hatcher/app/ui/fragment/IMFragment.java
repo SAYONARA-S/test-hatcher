@@ -295,7 +295,7 @@ public class IMFragment extends BaseFragment implements OnRefreshListener {
             }
 
             final ImItemInfoBean infoBean = infoList.get(position);
-
+            final int temp = position;
             imageLoader.displayImage(infoBean.getHeader(), mHolder.header, options);
             mHolder.my_info_text.setText(infoBean.getName());
             mHolder.my_info_msg.setText(infoBean.getMsg());
@@ -311,7 +311,7 @@ public class IMFragment extends BaseFragment implements OnRefreshListener {
             mHolder.item_info_layout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(mContext, position, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext, "" + temp, Toast.LENGTH_SHORT).show();
                 }
             });
             return view;
