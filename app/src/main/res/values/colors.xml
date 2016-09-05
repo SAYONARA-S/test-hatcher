@@ -50,6 +50,7 @@
     <color name="nav_text_gray">#B2B2B2</color>
     <color name="nav_line_gray">#DBDBDB</color>
     <color name="nav_btn_blue">#56C0E3</color>
+    <color name="nav_btn_blue1">#4AA898</color>
     <color name="nav_search_blue">#30CDD3</color>
     <color name="nav_search_yellow">#F0C416</color>
     <color name="nav_bg_gray">#F1F1F1</color>

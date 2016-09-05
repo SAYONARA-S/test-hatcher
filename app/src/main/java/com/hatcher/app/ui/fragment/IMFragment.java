@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.hatcher.app.R;
 import com.hatcher.app.service.bean.ImItemInfoBean;
 import com.hatcher.app.service.http.util.HttpUtil;
+import com.hatcher.app.ui.FriendManageActivity;
 import com.hatcher.app.util.CommonUtil;
 import com.hatcher.app.util.Constants;
 import com.hatcher.app.util.LoginConfig;
@@ -69,9 +70,9 @@ public class IMFragment extends BaseFragment implements OnRefreshListener {
     private Activity activity;
 
     private IMListInfoAdapter mIMListInfoAdapter;
-    private LoginConfig loginConfig = LoginConfig.getInstance();
     private List<ImItemInfoBean> imItemInfoBeanList = new ArrayList<ImItemInfoBean>();
 
+    private LoginConfig loginConfig = LoginConfig.getInstance();
     protected ImageLoader imageLoader = ImageLoader.getInstance();
     DisplayImageOptions options;
     private int page = 1;
@@ -151,7 +152,7 @@ public class IMFragment extends BaseFragment implements OnRefreshListener {
         switch (v.getId()) {
             case R.id.contacts_layout:
             {
-
+                startActivity(new Intent(mContext, FriendManageActivity.class));
             }
                 break;
             case R.id.search_layout:

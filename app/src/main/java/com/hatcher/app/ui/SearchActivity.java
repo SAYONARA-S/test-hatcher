@@ -46,7 +46,7 @@ public class SearchActivity extends BaseActivity implements OnClickListener {
     @ViewInject
     private ImageButton search_clear;
     @ViewInject
-    private RelativeLayout cancel;
+    private RelativeLayout cancel_layout;
     @ViewInject
     private RelativeLayout search_info_layout;
     @ViewInject
@@ -130,7 +130,7 @@ public class SearchActivity extends BaseActivity implements OnClickListener {
             }
         });
         search_clear.setOnClickListener(this);
-        cancel.setOnClickListener(this);
+        cancel_layout.setOnClickListener(this);
         search_info_layout.setOnClickListener(this);
     }
 
@@ -266,7 +266,7 @@ public class SearchActivity extends BaseActivity implements OnClickListener {
     @Override
     protected void onClick(int viewId) {
         switch (viewId) {
-            case R.id.cancel:
+            case R.id.cancel_layout:
                 finish();
                 break;
             case R.id.search_info_layout:
