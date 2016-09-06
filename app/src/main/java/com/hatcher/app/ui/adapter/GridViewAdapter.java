@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.hatcher.app.R;
 import com.hatcher.app.ui.PersonInfoActivity;
+import com.hatcher.app.ui.RankListActivity;
 
 import java.util.List;
 import java.util.Map;
@@ -61,6 +62,11 @@ public class GridViewAdapter extends BaseAdapter {
                 if (temp == 0)
                 {
                     context.startActivity(new Intent(context, PersonInfoActivity.class));
+                }
+                else if (temp == 1)
+                {
+                    context.startActivity(new Intent(context, RankListActivity.class));
+
                 }
                 Toast.makeText(context,map.get("text") + "",Toast.LENGTH_SHORT).show();
             }

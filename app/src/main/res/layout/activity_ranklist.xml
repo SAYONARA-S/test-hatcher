@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/friend_manage_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/nav_view_bg">
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="排行榜"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+        <RelativeLayout
+            android:id="@+id/back_layout"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/icon_back" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/search_layout"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/search"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/icon_search" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <FrameLayout
+        android:id="@+id/rank_top3_layout"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_below="@+id/title_layout"
+        android:layout_margin="10dp">
+
+        <com.hatcher.app.view.XCRoundRectImageView
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/login_bg" />
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_horizontal|bottom"
+            android:background="@drawable/shape_style_layoutshape1" />
+
+        <LinearLayout
+            android:id="@+id/top3_icon_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/top2_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1">
+
+                <com.hatcher.app.view.XCRoundRectImageView
+                    android:id="@+id/top2_icon"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="fitCenter" />
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_above="@+id/top2_icon"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="2dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/icon_clear" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/top1_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1">
+
+                <com.hatcher.app.view.XCRoundRectImageView
+                    android:id="@+id/top1_icon"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="fitCenter" />
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_above="@+id/top1_icon"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="2dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/icon_clear" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/top3_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1">
+
+                <com.hatcher.app.view.XCRoundRectImageView
+                    android:id="@+id/top3_icon"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="fitCenter" />
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_above="@+id/top3_icon"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="2dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/icon_clear" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/top3_info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rank_top3_layout"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/layout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/top2_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:text="top2"
+                android:textColor="@color/black"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/top2_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/top2_text"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/style_green_empty_button"
+                android:padding="5dp"
+                android:text="下载"
+                android:textColor="@color/nav_green_btn"
+                android:textSize="16dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/layout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/top1_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:text="top1"
+                android:textColor="@color/black"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/top1_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/top1_text"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/style_green_empty_button"
+                android:padding="5dp"
+                android:text="下载"
+                android:textColor="@color/nav_green_btn"
+                android:textSize="16dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/layout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/top3_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:text="top3"
+                android:textColor="@color/black"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/top3_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/top3_text"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/style_green_empty_button"
+                android:padding="5dp"
+                android:text="下载"
+                android:textColor="@color/nav_green_btn"
+                android:textSize="16dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/top3_info_layout"
+        android:background="@null"
+        android:layout_marginTop="5dp"
+        android:divider="@null"
+        android:dividerHeight="2px"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarSize="2dp"
+        android:scrollbarThumbVertical="@drawable/scrollbar_vertical_thumb"
+        android:scrollbarTrackVertical="@null" />
+
+</RelativeLayout>

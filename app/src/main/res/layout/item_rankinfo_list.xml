@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/nav_bg_dashboard"
+    android:clickable="true">
+
+    <RelativeLayout
+        android:id="@+id/item_info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="@color/nav_bg_dashboard"
+        android:clickable="true">
+        <TextView
+            android:id="@+id/rank_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text=""
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/black"
+            android:textSize="14dp" />
+        <com.hatcher.app.view.XCRoundRectImageView
+            android:id="@+id/header"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="40dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/login_bg"
+            />
+        <RelativeLayout
+            android:id="@+id/my_info_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/header" >
+            <TextView
+                android:id="@+id/my_info_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+            <TextView
+                android:id="@+id/my_info_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/my_info_text"
+                android:layout_marginTop="4dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/nav_gray_bg"
+                android:textSize="10dp" />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/top2_text"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/style_green_empty_button"
+            android:padding="5dp"
+            android:text="下载"
+            android:textColor="@color/nav_green_btn"
+            android:textSize="16dp" />
+    </RelativeLayout>
+</RelativeLayout>
