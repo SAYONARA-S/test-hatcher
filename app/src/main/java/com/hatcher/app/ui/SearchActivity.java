@@ -2,6 +2,7 @@ package com.hatcher.app.ui;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -61,6 +62,7 @@ public class SearchActivity extends BaseActivity implements OnClickListener {
     private Context mContext;
     private Activity activity;
     private LoginConfig loginConfig = LoginConfig.getInstance();
+    private SearchListInfoAdapter searchListInfoAdapter;
     private SearchListInfoAdapter personAdapter;
     private SearchListInfoAdapter teamAdapter;
     private SearchListInfoAdapter companyAdapter;
@@ -167,6 +169,25 @@ public class SearchActivity extends BaseActivity implements OnClickListener {
         }
     }
 
+    private void freshData()
+    {
+        if (searchItemInfoBeanList.size() > 0) {
+            try {
+                if (searchListInfoAdapter != null) {
+                    searchListInfoAdapter.notifyDataSetChanged();
+                } else {
+                    MyListView searchListView = new MyListView(mContext);
+                    searchListView.setDividerHeight(0);
+                    searchListInfoAdapter = new SearchListInfoAdapter(searchItemInfoBeanList);
+                    searchListView.setAdapter(searchListInfoAdapter);
+                    list_view.addView(searchListView);
+                }
+            } catch (Exception e) {
+                // TODO: handle exception
+            }
+        }
+    }
+
     private void refreshData() {
         if (personList.size() > 0) {
             try {
@@ -260,7 +281,8 @@ public class SearchActivity extends BaseActivity implements OnClickListener {
         }
         setListData(size);
 
-        refreshData();
+//        refreshData();
+        freshData();
     }
 
     @Override
@@ -349,6 +371,7 @@ public class SearchActivity extends BaseActivity implements OnClickListener {
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(mContext, "" + temp, Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(mContext,PersonInfoActivity.class));
                 }
             });
             return view;
