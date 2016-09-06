@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/friend_manage_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/nav_view_bg">
+
+        <RelativeLayout
+            android:id="@+id/back_layout"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/icon_back" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/search_layout"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true">
+
+            <ImageView
+                android:id="@+id/search"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/icon_search" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/nav_view_bg">
+
+        <RelativeLayout
+            android:id="@+id/like_layout"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp">
+
+            <ImageView
+                android:id="@+id/like"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/icon_like_white" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/share_layout"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp">
+
+            <ImageView
+                android:id="@+id/share"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/icon_share_white" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/download_big"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/selector_download_big" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_layout"
+        android:layout_below="@+id/title_layout"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:id="@+id/data_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <com.hatcher.app.view.XCRoundRectImageView
+                android:id="@+id/product_icon"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitCenter" />
+
+            <TextView
+                android:id="@+id/my_info_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/product_icon"
+                android:layout_centerHorizontal="true"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/my_info_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/my_info_text"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="4dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/nav_gray_bg"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/line1"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@+id/my_info_msg"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="20dp"
+                android:background="@color/nav_gray_bg" />
+
+            <TextView
+                android:id="@+id/product_introduce_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/line1"
+                android:layout_marginLeft="20dp"
+                android:text="产品介绍"
+                android:textColor="@color/black"
+                android:textSize="16dp" />
+
+            <RelativeLayout
+                android:id="@+id/product_introduce_layout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/product_introduce_title"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp">
+
+                <ImageView
+                    android:id="@+id/more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/selector_more" />
+
+                <TextView
+                    android:id="@+id/product_info_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@+id/more"
+                    android:ellipsize="end"
+                    android:maxLines="3"
+                    android:text=""
+                    android:textColor="@color/nav_gray_bg"
+                    android:textSize="12dp" />
+            </RelativeLayout>
+
+            <HorizontalScrollView
+                android:id="@+id/photo_list"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:layout_below="@+id/product_introduce_layout"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/id_gallery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal"></LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@+id/photo_list"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="20dp"
+                android:background="@color/nav_gray_bg" />
+
+            <TextView
+                android:id="@+id/product_team_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/line2"
+                android:layout_marginLeft="20dp"
+                android:text="所属团队"
+                android:textColor="@color/black"
+                android:textSize="16dp" />
+
+            <RelativeLayout
+                android:id="@+id/product_team_layout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/product_team_title"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="5dp">
+
+                <ImageView
+                    android:id="@+id/check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/selector_check" />
+
+                <com.hatcher.app.view.RoundImageView
+                    android:id="@+id/header"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/login_logo" />
+
+                <TextView
+                    android:id="@+id/team_info_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@+id/check"
+                    android:layout_toRightOf="@+id/header"
+                    android:ellipsize="end"
+                    android:maxLines="3"
+                    android:text=""
+                    android:textColor="@color/nav_gray_bg"
+                    android:textSize="12dp" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

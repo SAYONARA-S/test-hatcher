@@ -16,9 +16,11 @@ import android.widget.RelativeLayout;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
+import com.google.android.gms.plus.model.people.Person;
 import com.hatcher.app.R;
 import com.hatcher.app.service.http.util.HttpUtil;
 import com.hatcher.app.ui.ModifyPasswordActivity;
+import com.hatcher.app.ui.PersonInfoActivity;
 import com.hatcher.app.ui.adapter.GridViewAdapter;
 import com.hatcher.app.util.CommonUtil;
 import com.hatcher.app.util.ViewInject;
@@ -87,6 +89,7 @@ public class MyFragment extends BaseFragment {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.my_page_layout:
+                startActivity(new Intent(mContext, PersonInfoActivity.class));
                 break;
             case R.id.my_photo_layout:
                 break;

@@ -156,13 +156,13 @@ public class RankListActivity extends BaseActivity implements OnClickListener {
             case R.id.top3_btn:
                 break;
             case R.id.top1_icon:
-                startActivity(new Intent(mContext, SearchActivity.class));
+                startActivity(new Intent(mContext, ProductInfoActivity.class));
                 break;
             case R.id.top2_icon:
-                startActivity(new Intent(mContext, SearchActivity.class));
+                startActivity(new Intent(mContext, ProductInfoActivity.class));
                 break;
             case R.id.top3_icon:
-                startActivity(new Intent(mContext, SearchActivity.class));
+                startActivity(new Intent(mContext, ProductInfoActivity.class));
                 break;
             default:
                 break;
@@ -234,6 +234,7 @@ public class RankListActivity extends BaseActivity implements OnClickListener {
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(mContext, "" + temp, Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(mContext,ProductInfoActivity.class));
                 }
             });
             mHolder.download.setOnClickListener(new View.OnClickListener() {

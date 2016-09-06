@@ -69,11 +69,11 @@ public class Options {
 	public static DisplayImageOptions getListOptions() {
 		DisplayImageOptions options = new DisplayImageOptions.Builder()
 				// // 设置图片在下载期间显示的图片
-				.showImageOnLoading(R.drawable.icon_contacts)
+				.showImageOnLoading(R.drawable.login_logo)
 				// // 设置图片Uri为空或是错误的时候显示的图片
-				.showImageForEmptyUri(R.drawable.icon_contacts)
+				.showImageForEmptyUri(R.drawable.login_logo)
 				// // 设置图片加载/解码过程中错误时候显示的图片
-				.showImageOnFail(R.drawable.icon_contacts).cacheInMemory(true)
+				.showImageOnFail(R.drawable.login_logo).cacheInMemory(true)
 				// 设置下载的图片是否缓存在内存中
 				.cacheOnDisc(true)
 				// 设置下载的图片是否缓存在SD卡中
@@ -98,23 +98,23 @@ public class Options {
 	public static DisplayImageOptions getListOptions(int type) {
 		int bg = 0;
 		if (type == OPTION_HEAD_TYPE) {
-			bg = R.drawable.icon_contacts;
+			bg = R.drawable.login_logo;
 		}
 		else if (type == OPTION_HOME_AD_TYPE) {
-			bg = R.drawable.icon_contacts;
+			bg = R.drawable.login_logo;
 		}
 		else if (type == OPTION_HOME_LEFT_TYPE) {
-			bg = R.drawable.icon_contacts;
+			bg = R.drawable.login_logo;
 		}
 		else if (type == OPTION_HOME_RIGHT_TYPE) {
-			bg = R.drawable.icon_contacts;
+			bg = R.drawable.login_logo;
 		}
 		else if (type == OPTION_WHITE_BG_TYPE) {
-			bg = R.drawable.icon_contacts;
+			bg = R.drawable.login_logo;
 		}
 		else if (type == OPTION_MESSAGE_TRIP_STOP)
 		{
-			bg = R.drawable.icon_contacts;
+			bg = R.drawable.login_logo;
 		}
 
 		DisplayImageOptions options = new DisplayImageOptions.Builder()
