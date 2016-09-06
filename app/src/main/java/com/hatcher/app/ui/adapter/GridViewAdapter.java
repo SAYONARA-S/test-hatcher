@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.hatcher.app.R;
 import com.hatcher.app.ui.PersonInfoActivity;
 import com.hatcher.app.ui.RankListActivity;
+import com.hatcher.app.ui.TeamSituationActivity;
 
 import java.util.List;
 import java.util.Map;
@@ -61,7 +62,7 @@ public class GridViewAdapter extends BaseAdapter {
             public void onClick(View v) {
                 if (temp == 0)
                 {
-                    context.startActivity(new Intent(context, PersonInfoActivity.class));
+                    context.startActivity(new Intent(context, TeamSituationActivity.class));
                 }
                 else if (temp == 1)
                 {
