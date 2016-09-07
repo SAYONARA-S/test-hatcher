@@ -14,6 +14,8 @@ import android.widget.Toast;
 import com.hatcher.app.R;
 import com.hatcher.app.ui.PersonInfoActivity;
 import com.hatcher.app.ui.RankListActivity;
+import com.hatcher.app.ui.TeamFormActivity;
+import com.hatcher.app.ui.TeamMainActivity;
 import com.hatcher.app.ui.TeamSituationActivity;
 
 import java.util.List;
@@ -62,12 +64,15 @@ public class GridViewAdapter extends BaseAdapter {
             public void onClick(View v) {
                 if (temp == 0)
                 {
-                    context.startActivity(new Intent(context, TeamSituationActivity.class));
+                    context.startActivity(new Intent(context, TeamFormActivity.class));
                 }
                 else if (temp == 1)
                 {
                     context.startActivity(new Intent(context, RankListActivity.class));
-
+                }
+                else if (temp == 2)
+                {
+                    context.startActivity(new Intent(context, TeamMainActivity.class));
                 }
                 Toast.makeText(context,map.get("text") + "",Toast.LENGTH_SHORT).show();
             }

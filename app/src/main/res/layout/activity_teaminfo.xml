@@ -3,7 +3,7 @@
     android:id="@+id/team_main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/nav_function_bg">
+    android:background="@color/nav_im_other_bg">
 
     <RelativeLayout
         android:id="@+id/title_layout"
@@ -176,7 +176,7 @@
         android:layout_width="match_parent"
         android:layout_height="84dp"
         android:layout_below="@+id/team_title_layout"
-        android:background="@color/nav_function_bg">
+        android:background="@color/nav_im_other_bg">
 
         <RelativeLayout
             android:id="@+id/team_photodata_layout"
