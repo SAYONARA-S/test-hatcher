@@ -62,9 +62,8 @@ public class TeamSituationActivity extends BaseActivity implements View.OnClickL
     private Activity activity;
 
     private HomeListInfoAdapter mHomeListInfoAdapter;
-    private LoginConfig loginConfig = LoginConfig.getInstance();
     private List<HomeItemInfoBean> homeItemInfoBeanList = new ArrayList<HomeItemInfoBean>();
-
+    private LoginConfig loginConfig = LoginConfig.getInstance();
     protected ImageLoader imageLoader;
     DisplayImageOptions options;
     private int page = 1;

@@ -23,6 +23,7 @@ import com.hatcher.app.R;
 import com.hatcher.app.service.bean.ImItemInfoBean;
 import com.hatcher.app.service.http.util.HttpUtil;
 import com.hatcher.app.ui.FriendManageActivity;
+import com.hatcher.app.ui.PersonInfoActivity;
 import com.hatcher.app.util.CommonUtil;
 import com.hatcher.app.util.Constants;
 import com.hatcher.app.util.LoginConfig;
@@ -313,6 +314,8 @@ public class IMFragment extends BaseFragment implements OnRefreshListener {
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(mContext, "" + temp, Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(mContext, PersonInfoActivity.class);
+                    startActivity(intent);
                 }
             });
             return view;
