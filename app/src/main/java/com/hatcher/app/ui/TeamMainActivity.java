@@ -94,7 +94,7 @@ public class TeamMainActivity extends BaseActivity implements OnClickListener {
                 startActivity(new Intent(mContext, ApplyTeamActivity.class));
                 break;
             case R.id.my_team_layout:
-
+                startActivity(new Intent(mContext, TeamListActivity.class));
                 break;
             case R.id.search_layout:
                 startActivity(new Intent(mContext, SearchActivity.class));
