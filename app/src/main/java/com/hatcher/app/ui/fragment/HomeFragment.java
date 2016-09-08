@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -301,7 +302,7 @@ public class HomeFragment extends BaseFragment implements OnRefreshListener {
                     Toast.makeText(mContext, "" + temp, Toast.LENGTH_SHORT).show();
                 }
             });
-
+            Log.e("hatcher","home position " + temp);
             GridAdapter imageAdapter = new GridAdapter(mContext, infoBean.getImageURLlist());
             final ArrayList<String> urllist = infoBean.getImageURLlist();
             mHolder.image_grid_view.setAdapter(imageAdapter);

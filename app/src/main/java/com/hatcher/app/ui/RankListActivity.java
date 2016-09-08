@@ -4,29 +4,26 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.BaseAdapter;
-import android.widget.GridView;
-import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.hatcher.app.R;
 import com.hatcher.app.service.bean.FriendItemInfoBean;
-import com.hatcher.app.ui.adapter.FriendGridViewAdapter;
 import com.hatcher.app.util.CommonUtil;
 import com.hatcher.app.util.Constants;
 import com.hatcher.app.util.LoginConfig;
 import com.hatcher.app.util.Options;
 import com.hatcher.app.util.ViewInject;
+import com.hatcher.app.view.OnRefreshListener;
 import com.hatcher.app.view.RefreshListView;
-import com.hatcher.app.view.RoundImageView;
 import com.hatcher.app.view.XCRoundRectImageView;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -35,12 +32,12 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RankListActivity extends BaseActivity implements OnClickListener {
+public class RankListActivity extends BaseActivity implements OnClickListener, OnRefreshListener {
 
     @ViewInject
     private TextView title_text;
     @ViewInject
-    private ListView list_view;
+    private RefreshListView list_view;
     @ViewInject
     private RelativeLayout back_layout;
     @ViewInject
@@ -69,6 +66,7 @@ public class RankListActivity extends BaseActivity implements OnClickListener {
     private LoginConfig loginConfig = LoginConfig.getInstance();
     protected ImageLoader imageLoader;
     DisplayImageOptions options;
+    private int page = 1;
 
     public RankListActivity() {
     }
@@ -88,7 +86,6 @@ public class RankListActivity extends BaseActivity implements OnClickListener {
         CommonUtil.initViewInject(this, RankListActivity.class, this);
 //        viewContainer = new ArrayList<>();
         initView();
-        sendGetRankListRequest();
     }
 
     @Override
@@ -125,20 +122,29 @@ public class RankListActivity extends BaseActivity implements OnClickListener {
         top2_text.setText(top2Info.getName());
         top3_text.setText(top3Info.getName());
 
-
-        rankListInfoAdapter = new RankListInfoAdapter(rankItemInfoBeanList);
-        list_view.setAdapter(rankListInfoAdapter);
+        if (rankItemInfoBeanList.size() > 0) {
+            try {
+                if (rankListInfoAdapter != null) {
+                    rankListInfoAdapter.notifyDataSetChanged();
+                } else {
+                    rankListInfoAdapter = new RankListInfoAdapter(rankItemInfoBeanList);
+                    list_view.setAdapter(rankListInfoAdapter);
+                }
+            } catch (Exception e) {
+                // TODO: handle exception
+            }
+        }
     }
 
-    private void sendGetRankListRequest() {
-        setListData(25);
-
-        initData();
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.e("hatcher", "onResume " + page);
+        sendGetRankListRequest("refresh", 0);
     }
 
     private void setListData(int page) {
-
-        for (int i = 3; i < page; i++) {
+        for (int i = (1 + page * 5); i <= (5 * (page + 1)); i++) {
             rankItemInfoBeanList.add(new FriendItemInfoBean(i));
         }
     }
@@ -167,6 +173,37 @@ public class RankListActivity extends BaseActivity implements OnClickListener {
             default:
                 break;
         }
+    }
+
+    public void sendGetRankListRequest(String moreOrFirst, int curPage) {
+        if ("more".equals(moreOrFirst)) {
+            list_view.hideFooterView();
+        } else if ("refresh".equals(moreOrFirst)) {
+            list_view.hideHeaderView();
+            rankItemInfoBeanList.clear();
+        }
+
+        setListData(curPage);
+        curPage++;
+        page = curPage;
+        Log.e("hatcher", "rankItemInfoBeanList.size() " + rankItemInfoBeanList.size());
+        Log.e("hatcher", "page " + page);
+
+        initData();
+    }
+
+    @Override
+    public void onDownPullRefresh() {
+        page = 0;
+        Log.e("hatcher", "onDownPullRefresh " + page);
+        sendGetRankListRequest("refresh", page);
+    }
+
+    @Override
+    public void onLoadingMore() {
+        Log.e("hatcher", "onLoadingMore " + page);
+
+        sendGetRankListRequest("more", page);
     }
 
     public class RankListInfoAdapter extends BaseAdapter {
@@ -229,12 +266,12 @@ public class RankListActivity extends BaseActivity implements OnClickListener {
             mHolder.my_info_text.setText(infoBean.getName());
             mHolder.my_info_msg.setText(infoBean.getMsg());
             mHolder.rank_num.setText("" + temp);
-
+            Log.e("hatcher","position " + temp);
             mHolder.item_info_layout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(mContext, "" + temp, Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(mContext,ProductInfoActivity.class));
+                    startActivity(new Intent(mContext, ProductInfoActivity.class));
                 }
             });
             mHolder.download.setOnClickListener(new View.OnClickListener() {
