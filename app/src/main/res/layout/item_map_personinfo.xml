@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_layout"
+    android:layout_width="160dp"
+    android:layout_height="wrap_content"
+    android:background="@null"
+    android:clickable="true">
+
+    <FrameLayout
+        android:id="@+id/item_info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:layout_margin="5dp"
+        android:clickable="true">
+
+        <RelativeLayout
+            android:id="@+id/my_info_layout"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/shape_style_layoutshape_alpha"
+            android:layout_marginLeft="28dp">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="10dp">
+                <TextView
+                    android:id="@+id/my_info_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:text=""
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/white"
+                    android:textSize="14dp" />
+                <TextView
+                    android:id="@+id/my_info_msg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/my_info_text"
+                    android:layout_marginTop="4dp"
+
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="10dp" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <com.hatcher.app.view.RoundImageView
+            android:id="@+id/header"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/login_bg" />
+    </FrameLayout>
+</RelativeLayout>
