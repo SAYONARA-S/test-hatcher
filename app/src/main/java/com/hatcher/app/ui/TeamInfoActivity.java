@@ -118,6 +118,11 @@ public class TeamInfoActivity extends BaseActivity implements OnClickListener {
     protected void initData() {
         GridAdapter imageAdapter = new GridAdapter(mContext, imageUrlList);
         gview.setAdapter(imageAdapter);
+
+        imageLoader.displayImage("http://avatar.csdn.net/9/7/0/1_mosibi.jpg",header,options);
+        team_info_text.setText("啊手动阀手动阀手动阀手动阀手动阀手动阀啊手动阀手动阀手动阀手动阀手动阀手动阀啊手动阀手动阀手动阀手动阀手动阀手动阀啊手动阀手动阀手动阀手动阀手动阀手动阀啊手动阀手动阀手动阀手动阀手动阀手动阀啊手动阀手动阀手动阀手动阀手动阀手动阀啊手动阀手动阀手动阀手动阀手动阀手动阀");
+
+
     }
 
     private void sendGetTeamInfoRequest(String teamid) {

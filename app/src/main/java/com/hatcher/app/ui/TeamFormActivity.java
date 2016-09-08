@@ -107,10 +107,10 @@ public class TeamFormActivity extends BaseActivity implements OnClickListener {
 
                 break;
             case R.id.my_setting_layout:
-
+                startActivity(new Intent(mContext, TeamSettingActivity.class));
                 break;
             case R.id.my_product_layout:
-
+                startActivity(new Intent(mContext, ModifyProductActivity.class));
                 break;
             case R.id.search_layout:
                 startActivity(new Intent(mContext, SearchActivity.class));

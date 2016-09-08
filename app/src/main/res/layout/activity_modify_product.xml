@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/my_main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/nav_function_bg">
+
+    <RelativeLayout
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/nav_view_bg">
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="产品维护"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+        <RelativeLayout
+            android:id="@+id/back_layout"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/icon_back" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/search_layout"
+            android:layout_width="40dp"
+            android:visibility="gone"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true">
+
+            <ImageView
+                android:id="@+id/search"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/icon_search" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/my_product_layout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/title_layout"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:clickable="true"
+        android:gravity="center_vertical">
+
+        <com.hatcher.app.view.RoundImageView
+            android:id="@+id/my_product_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/login_logo"
+            />
+
+        <ImageView
+            android:id="@+id/my_product_right"
+            android:layout_width="14dp"
+            android:layout_height="28dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon_enter" />
+
+        <TextView
+            android:id="@+id/my_product_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/my_product_icon"
+            android:text="上传产品图标"
+            android:textColor="@color/black"
+            android:textSize="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0.5px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/nav_line_gray" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0.5px"
+            android:layout_alignParentTop="true"
+            android:background="@color/nav_line_gray" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/my_photo_layout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/my_product_layout"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:clickable="true"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/my_photo_right"
+            android:layout_width="14dp"
+            android:layout_height="28dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon_enter" />
+
+        <TextView
+            android:id="@+id/my_photo_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:text="上传产品图标"
+            android:textColor="@color/black"
+            android:textSize="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0.5px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/nav_line_gray" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0.5px"
+            android:layout_alignParentTop="true"
+            android:background="@color/nav_line_gray" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/my_type_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/my_photo_layout"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:clickable="true"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/type_edit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="请输入产品类别"
+            android:paddingBottom="5dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="30dp"
+            android:paddingTop="5dp"
+            android:singleLine="true"
+            android:inputType="text"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0.5px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/nav_line_gray" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0.5px"
+            android:layout_alignParentTop="true"
+            android:background="@color/nav_line_gray" />
+    </RelativeLayout>
+       <RelativeLayout
+        android:id="@+id/my_email_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/my_type_layout"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:clickable="true"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/email_edit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="请输入产品版本号"
+            android:paddingBottom="5dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="30dp"
+            android:paddingTop="5dp"
+            android:singleLine="true"
+            android:maxLength="15"
+            android:inputType="text"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0.5px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/nav_line_gray" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0.5px"
+            android:layout_alignParentTop="true"
+            android:background="@color/nav_line_gray" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/my_introduce_layout"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@+id/my_email_layout"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:clickable="true"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/introduce_edit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:gravity="top|left"
+            android:hint="请输入产品描述，0-200字"
+            android:paddingBottom="15dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="30dp"
+            android:paddingTop="15dp"
+            android:maxLength="200"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0.5px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/nav_line_gray" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0.5px"
+            android:layout_alignParentTop="true"
+            android:background="@color/nav_line_gray" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/apply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/my_introduce_layout"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/selector_addproduct"/>
+</RelativeLayout>
