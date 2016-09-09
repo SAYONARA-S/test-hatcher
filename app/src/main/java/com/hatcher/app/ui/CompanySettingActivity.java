@@ -44,7 +44,7 @@ public class CompanySettingActivity extends BaseActivity implements OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_team_setting);
+        setContentView(R.layout.activity_company_setting);
         mContext = this;
         activity = this;
         loginConfig.loadConfig(this, Constants.LOGIN_CONFIG);

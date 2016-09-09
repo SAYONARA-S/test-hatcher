@@ -45,7 +45,7 @@ public class ApplyCompanyActivity extends BaseActivity implements OnClickListene
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_team_apply);
+        setContentView(R.layout.activity_company_apply);
         mContext = this;
         activity = this;
         loginConfig.loadConfig(this, Constants.LOGIN_CONFIG);
