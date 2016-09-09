@@ -32,7 +32,7 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RankListActivity extends BaseActivity implements OnClickListener, OnRefreshListener {
+public class RankListActivity extends BaseActivity implements View.OnClickListener, OnRefreshListener{
 
     @ViewInject
     private TextView title_text;
@@ -86,6 +86,8 @@ public class RankListActivity extends BaseActivity implements OnClickListener, O
         CommonUtil.initViewInject(this, RankListActivity.class, this);
 //        viewContainer = new ArrayList<>();
         initView();
+        rankItemInfoBeanList.clear();
+        initData();
     }
 
     @Override
@@ -105,7 +107,6 @@ public class RankListActivity extends BaseActivity implements OnClickListener, O
         top2_icon.setOnClickListener(this);
         top3_icon.setOnClickListener(this);
 
-        rankItemInfoBeanList.clear();
     }
 
     @Override
@@ -121,6 +122,10 @@ public class RankListActivity extends BaseActivity implements OnClickListener, O
         top1_text.setText(top1Info.getName());
         top2_text.setText(top2Info.getName());
         top3_text.setText(top3Info.getName());
+
+    }
+
+    private void refreshData() {
 
         if (rankItemInfoBeanList.size() > 0) {
             try {
@@ -189,7 +194,7 @@ public class RankListActivity extends BaseActivity implements OnClickListener, O
         Log.e("hatcher", "rankItemInfoBeanList.size() " + rankItemInfoBeanList.size());
         Log.e("hatcher", "page " + page);
 
-        initData();
+        refreshData();
     }
 
     @Override
@@ -266,7 +271,7 @@ public class RankListActivity extends BaseActivity implements OnClickListener, O
             mHolder.my_info_text.setText(infoBean.getName());
             mHolder.my_info_msg.setText(infoBean.getMsg());
             mHolder.rank_num.setText("" + temp);
-            Log.e("hatcher","position " + temp);
+            Log.e("hatcher", "position " + temp);
             mHolder.item_info_layout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

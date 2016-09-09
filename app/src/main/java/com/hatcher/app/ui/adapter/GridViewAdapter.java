@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.hatcher.app.R;
+import com.hatcher.app.ui.CompanyMainActivity;
 import com.hatcher.app.ui.PersonInfoActivity;
 import com.hatcher.app.ui.RankListActivity;
 import com.hatcher.app.ui.TeamFormActivity;
@@ -73,6 +74,10 @@ public class GridViewAdapter extends BaseAdapter {
                 else if (temp == 2)
                 {
                     context.startActivity(new Intent(context, TeamMainActivity.class));
+                }
+                else
+                {
+                    context.startActivity(new Intent(context, CompanyMainActivity.class));
                 }
                 Toast.makeText(context,map.get("text") + "",Toast.LENGTH_SHORT).show();
             }

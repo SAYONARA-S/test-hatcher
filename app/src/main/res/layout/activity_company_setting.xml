@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="申请团队"
+            android:text="公司设置"
             android:textColor="@color/white"
             android:textSize="20dp" />
 
@@ -94,7 +94,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="5dp"
             android:layout_toRightOf="@+id/my_team_icon"
-            android:text="上传团队图标"
+            android:text="上传公司图标"
             android:textColor="@color/black"
             android:textSize="16dp" />
 
@@ -112,32 +112,45 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/my_type_layout"
+        android:id="@+id/my_video_layout"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_below="@+id/my_team_layout"
         android:layout_marginTop="10dp"
         android:background="@color/white"
         android:clickable="true"
         android:gravity="center_vertical">
 
-        <EditText
-            android:id="@+id/type_edit"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+        <com.hatcher.app.view.RoundImageView
+            android:id="@+id/my_video_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_centerVertical="true"
-            android:background="@null"
-            android:gravity="center_vertical"
-            android:hint="请输入团队所属行业"
-            android:paddingBottom="5dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="30dp"
-            android:paddingTop="5dp"
-            android:singleLine="true"
-            android:inputType="text"
-            android:text=""
+            android:layout_marginLeft="20dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/login_logo"
+            />
+
+        <ImageView
+            android:id="@+id/my_video_right"
+            android:layout_width="14dp"
+            android:layout_height="28dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon_enter" />
+
+        <TextView
+            android:id="@+id/my_video_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/my_video_icon"
+            android:text="上传公司视频"
             android:textColor="@color/black"
-            android:textSize="18dp" />
+            android:textSize="16dp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -155,7 +168,7 @@
         android:id="@+id/my_email_layout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@+id/my_type_layout"
+        android:layout_below="@+id/my_video_layout"
         android:layout_marginTop="10dp"
         android:background="@color/white"
         android:clickable="true"
@@ -168,14 +181,13 @@
             android:layout_centerVertical="true"
             android:background="@null"
             android:gravity="center_vertical"
-            android:hint="请输入团队名称，2-15字"
+            android:hint="请输入企业邮箱"
             android:paddingBottom="5dp"
             android:paddingLeft="20dp"
             android:paddingRight="30dp"
             android:paddingTop="5dp"
             android:singleLine="true"
-            android:maxLength="15"
-            android:inputType="text"
+            android:inputType="textEmailAddress"
             android:text=""
             android:textColor="@color/black"
             android:textSize="18dp" />
@@ -210,7 +222,7 @@
             android:layout_centerVertical="true"
             android:background="@null"
             android:gravity="top|left"
-            android:hint="请输入团队介绍，0-200字"
+            android:hint="请输入公司介绍，0-200字"
             android:paddingBottom="15dp"
             android:paddingLeft="20dp"
             android:paddingRight="30dp"
@@ -233,13 +245,4 @@
             android:layout_alignParentTop="true"
             android:background="@color/nav_line_gray" />
     </RelativeLayout>
-
-    <ImageView
-        android:id="@+id/apply"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/my_introduce_layout"
-        android:layout_marginTop="40dp"
-        android:src="@drawable/selector_applyteam_red"/>
 </RelativeLayout>
