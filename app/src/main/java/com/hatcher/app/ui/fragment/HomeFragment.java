@@ -27,6 +27,7 @@ import com.hatcher.app.R;
 import com.hatcher.app.service.bean.HomeItemInfoBean;
 import com.hatcher.app.service.bean.ImItemInfoBean;
 import com.hatcher.app.service.http.util.HttpUtil;
+import com.hatcher.app.testpic.PublishedActivity;
 import com.hatcher.app.ui.ItemPhotoActivity;
 import com.hatcher.app.ui.RecommentActivity;
 import com.hatcher.app.ui.SearchActivity;
@@ -156,7 +157,7 @@ public class HomeFragment extends BaseFragment implements OnRefreshListener {
                 break;
             case R.id.search_layout:
             {
-                startActivity(new Intent(mContext, SearchActivity.class));
+                startActivity(new Intent(mContext, PublishedActivity.class));
             }
             break;
             case R.id.back_layout:
