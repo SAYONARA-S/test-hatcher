@@ -18,6 +18,7 @@ import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,6 +28,7 @@ import com.hatcher.app.service.bean.HomeItemInfoBean;
 import com.hatcher.app.service.bean.ImItemInfoBean;
 import com.hatcher.app.service.http.util.HttpUtil;
 import com.hatcher.app.ui.ItemPhotoActivity;
+import com.hatcher.app.ui.RecommentActivity;
 import com.hatcher.app.ui.SearchActivity;
 import com.hatcher.app.util.CommonUtil;
 import com.hatcher.app.util.Constants;
@@ -283,6 +285,9 @@ public class HomeFragment extends BaseFragment implements OnRefreshListener {
                 mHolder.my_info_text = (TextView) view.findViewById(R.id.my_info_text);
                 mHolder.header = (RoundImageView) view.findViewById(R.id.header);
                 mHolder.image_grid_view = (MyGridView) view.findViewById(R.id.image_grid_view);
+                mHolder.layout1 = (LinearLayout) view.findViewById(R.id.layout1);
+                mHolder.layout2 = (LinearLayout) view.findViewById(R.id.layout2);
+                mHolder.layout3 = (LinearLayout) view.findViewById(R.id.layout3);
                 view.setTag(mHolder);
 
             } else {
@@ -319,6 +324,15 @@ public class HomeFragment extends BaseFragment implements OnRefreshListener {
                     startActivity(intent);
                 }
             });
+            mHolder.layout3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(activity, RecommentActivity.class);
+                    intent.putStringArrayListExtra("urllist", urllist);
+                    startActivity(intent);
+                }
+            });
+
             return view;
         }
 
@@ -328,6 +342,7 @@ public class HomeFragment extends BaseFragment implements OnRefreshListener {
             TextView my_info_msg, my_info_text;
             RoundImageView header;
             MyGridView image_grid_view;
+            LinearLayout layout1,layout2,layout3;
         }
     }
 

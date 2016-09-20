@@ -130,7 +130,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:scaleType="fitXY"
-            android:src="@drawable/login_logo" />
+            android:src="@drawable/default_header" />
 
         <TextView
             android:id="@+id/team_info_text"

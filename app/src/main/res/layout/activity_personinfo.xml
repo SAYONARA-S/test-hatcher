@@ -132,7 +132,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="20dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/login_bg" />
+                android:src="@drawable/default_header" />
         </RelativeLayout>
     </FrameLayout>
 

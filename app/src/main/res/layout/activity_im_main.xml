@@ -128,7 +128,7 @@
                 android:layout_height="80dp"
                 android:layout_above="@+id/my_info_text"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/login_bg"
+                android:src="@drawable/default_header"
                 android:layout_marginBottom="10dp"
                 android:scaleType="fitXY"/>
 

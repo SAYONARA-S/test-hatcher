@@ -58,6 +58,6 @@
             android:layout_height="56dp"
             android:layout_centerVertical="true"
             android:scaleType="fitXY"
-            android:src="@drawable/login_bg" />
+            android:src="@drawable/default_header" />
     </FrameLayout>
 </RelativeLayout>

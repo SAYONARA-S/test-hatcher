@@ -82,7 +82,7 @@ public class TabMainActivity extends FragmentActivity {
 	}
 
 	private class MyAdapter extends IndicatorViewPager.IndicatorFragmentPagerAdapter {
-		private String[] tabNames = { "首页", "聊天", "功能", "我的" };
+		private String[] tabNames = { "世界", "消息", "功能", "个人" };
 		private int[] tabIcons = { R.drawable.selector_main1,
 				R.drawable.selector_main2, R.drawable.selector_main3,
 				R.drawable.selector_main4};
@@ -101,13 +101,23 @@ public class TabMainActivity extends FragmentActivity {
 		@Override
 		public View getViewForTab(int position, View convertView,
 								  ViewGroup container) {
+//			if (convertView == null) {
+//				convertView = (ImageView) inflater.inflate(R.layout.tab_main,
+//						container, false);
+//			}
+//			ImageView imageView = (ImageView) convertView;
+//			imageView.setImageResource(tabIcons[position]);
+//			return imageView;
 			if (convertView == null) {
-				convertView = (ImageView) inflater.inflate(R.layout.tab_main,
+				convertView = (TextView) inflater.inflate(R.layout.tab_main1,
 						container, false);
 			}
-			ImageView imageView = (ImageView) convertView;
-			imageView.setImageResource(tabIcons[position]);
-			return imageView;
+			TextView textView = (TextView) convertView;
+			textView.setText(tabNames[position]);
+			textView.setCompoundDrawablesWithIntrinsicBounds(0,
+					tabIcons[position], 0, 0);
+			textView.setCompoundDrawablePadding(-30);
+			return textView;
 		}
 
 		@Override

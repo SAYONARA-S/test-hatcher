@@ -79,7 +79,7 @@
             android:scaleType="fitCenter"
             android:layout_gravity="bottom|right"
             android:layout_margin="20dp"
-            android:src="@drawable/login_logo" />
+            android:src="@drawable/default_header" />
     </FrameLayout>
 
     <com.hatcher.app.view.RefreshListView

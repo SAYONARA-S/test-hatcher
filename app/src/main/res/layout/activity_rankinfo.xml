@@ -256,7 +256,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
                     android:scaleType="fitXY"
-                    android:src="@drawable/login_logo" />
+                    android:src="@drawable/default_header" />
 
                 <TextView
                     android:id="@+id/team_info_text"

@@ -74,10 +74,11 @@ public class TeamInfoActivity extends BaseActivity implements OnClickListener {
         mContext = this;
         activity = this;
         loginConfig.loadConfig(mContext, Constants.LOGIN_CONFIG);
+        options = Options.getListOptions(1);
         imageLoader = ImageLoader.getInstance();
-        if (!imageLoader.isInited())
-            imageLoader.init(ImageLoaderConfiguration.createDefault(mContext));
-        options = Options.getListOptions();
+//        if (!imageLoader.isInited())
+        imageLoader.init(ImageLoaderConfiguration.createDefault(mContext));
+
         CommonUtil.initViewInject(this, TeamInfoActivity.class, this);
 //        viewContainer = new ArrayList<>();
         initView();
@@ -119,7 +120,7 @@ public class TeamInfoActivity extends BaseActivity implements OnClickListener {
         GridAdapter imageAdapter = new GridAdapter(mContext, imageUrlList);
         gview.setAdapter(imageAdapter);
 
-        imageLoader.displayImage("http://avatar.csdn.net/9/7/0/1_mosibi.jpg",header,options);
+//        imageLoader.displayImage("",header,options);
         team_info_text.setText("啊手动阀手动阀手动阀手动阀手动阀手动阀啊手动阀手动阀手动阀手动阀手动阀手动阀啊手动阀手动阀手动阀手动阀手动阀手动阀啊手动阀手动阀手动阀手动阀手动阀手动阀啊手动阀手动阀手动阀手动阀手动阀手动阀啊手动阀手动阀手动阀手动阀手动阀手动阀啊手动阀手动阀手动阀手动阀手动阀手动阀");
 
 

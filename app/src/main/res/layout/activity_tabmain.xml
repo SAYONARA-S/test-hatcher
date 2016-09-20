@@ -15,7 +15,7 @@
     <com.hatcher.app.view.indicator.FixedIndicatorView
         android:id="@+id/tabmain_indicator"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_gravity="bottom"
         android:background="@color/nav_view_bg" />
 

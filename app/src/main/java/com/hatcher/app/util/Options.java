@@ -41,45 +41,21 @@ public class Options {
 	public static final int OPTION_WHITE_BG_TYPE = 5;
 	public static final int OPTION_MESSAGE_TRIP_STOP = 6;
 
-	public static final String SHARE_SINGLE_TRIP = "SHARE_SINGLE_TRIP";
-	public static final String SHARE_TRIPS = "SHARE_TRIPS";
-	public static final String SHARE_INVITE = "SHARE_INVITE";
-	public static final String SHARE_NPI = "SHARE_NPI";
-
-	public static final int TYPE_AUTO = 1;
-	public static final int TYPE_BRIGHT = 2;
-	public static final int TYPE_NIGHT = 3;
-	public static final int TYPE_SOUND = 4;
-
-	public static final int SAFE_TYPE_1 = 1;
-	public static final int SAFE_TYPE_2 = 2;
-	public static final int SAFE_TYPE_3 = 3;
-	public static final int SAFE_TYPE_4 = 4;
-	public static final int SAFE_TYPE_5 = 5;
-	public static final int SAFE_TYPE_6 = 6;
-	public static final int SAFE_TYPE_7 = 7;
-	public static final int SAFE_TYPE_0 = 0;
-
-	public static final int MESSAGE_TRIP = 0;
-	public static final int MESSAGE_ACTIVITY = 1;
-	public static final int MESSAGE_READ = 0;
-	public static final int MESSAGE_UNREAD = 1;
-
 	/** 新闻列表中用到的图片加载配置 */
 	public static DisplayImageOptions getListOptions() {
 		DisplayImageOptions options = new DisplayImageOptions.Builder()
 				// // 设置图片在下载期间显示的图片
-				.showImageOnLoading(R.drawable.login_logo)
+				.showImageOnLoading(R.drawable.default_header)
 				// // 设置图片Uri为空或是错误的时候显示的图片
-				.showImageForEmptyUri(R.drawable.login_logo)
+				.showImageForEmptyUri(R.drawable.default_header)
 				// // 设置图片加载/解码过程中错误时候显示的图片
-				.showImageOnFail(R.drawable.login_logo).cacheInMemory(true)
+				.showImageOnFail(R.drawable.default_header).cacheInMemory(true)
 				// 设置下载的图片是否缓存在内存中
 				.cacheOnDisc(true)
 				// 设置下载的图片是否缓存在SD卡中
 				.considerExifParams(true)
 				.imageScaleType(ImageScaleType.EXACTLY_STRETCHED)// 设置图片以如何的编码方式显示
-				.bitmapConfig(Bitmap.Config.RGB_565)// 设置图片的解码类型
+				.bitmapConfig(Bitmap.Config.ARGB_8888)// 设置图片的解码类型
 				// .decodingOptions(android.graphics.BitmapFactory.Options
 				// decodingOptions)//设置图片的解码配置
 				.considerExifParams(true)
@@ -98,23 +74,23 @@ public class Options {
 	public static DisplayImageOptions getListOptions(int type) {
 		int bg = 0;
 		if (type == OPTION_HEAD_TYPE) {
-			bg = R.drawable.login_logo;
+			bg = R.drawable.default_header;
 		}
 		else if (type == OPTION_HOME_AD_TYPE) {
-			bg = R.drawable.login_logo;
+			bg = R.drawable.default_header;
 		}
 		else if (type == OPTION_HOME_LEFT_TYPE) {
-			bg = R.drawable.login_logo;
+			bg = R.drawable.default_header;
 		}
 		else if (type == OPTION_HOME_RIGHT_TYPE) {
-			bg = R.drawable.login_logo;
+			bg = R.drawable.default_header;
 		}
 		else if (type == OPTION_WHITE_BG_TYPE) {
-			bg = R.drawable.login_logo;
+			bg = R.drawable.default_header;
 		}
 		else if (type == OPTION_MESSAGE_TRIP_STOP)
 		{
-			bg = R.drawable.login_logo;
+			bg = R.drawable.default_header;
 		}
 
 		DisplayImageOptions options = new DisplayImageOptions.Builder()
@@ -125,8 +101,6 @@ public class Options {
 				// // 设置图片加载/解码过程中错误时候显示的图片
 				.showImageOnFail(bg).cacheInMemory(true)
 				// 设置下载的图片是否缓存在内存中
-				
-				
 				.cacheOnDisc(true)
 				// 设置下载的图片是否缓存在SD卡中
 				.considerExifParams(true)
@@ -326,44 +300,6 @@ public class Options {
 		String time = sdf.format(date1).toString();
 		return time;
 	}
-
-	public static int getSafeTypeToInt(int safeType) {
-		int behavior = safeType;
-		/**
-		 * 返回急加速、急减速、急转弯、转弯急加速
-		 * @return 00000000： 各位默认为0
-		 *         右数第1位为1：急加速
-		 *         右数第2位为1：急减速
-		 *         右数第3位为1：急转弯
-		 *         右数第4位为1：转弯急加速
-		 *         右数第5位为1：好的转弯
-		 *         右数第6位为1：平稳启动
-		 *         右数第7位为1：平稳停车
-		 */
-		if ((behavior & 1) == 1) {
-			return SAFE_TYPE_1;
-		}
-		if ((behavior & (1 << 1)) == (1 << 1)) {
-			return SAFE_TYPE_2;
-		}
-		if ((behavior & (1 << 2)) == (1 << 2)) {
-			return SAFE_TYPE_3;
-		}
-		if ((behavior & (1 << 3)) == (1 << 3)) {
-			return SAFE_TYPE_4;
-		}
-		if ((behavior & (1 << 4)) == (1 << 4)) {
-			return SAFE_TYPE_5;
-		}
-		if ((behavior & (1 << 5)) == (1 << 5)) {
-			return SAFE_TYPE_6;
-		}
-		if ((behavior & (1 << 6)) == (1 << 6)) {
-			return SAFE_TYPE_7;
-		}
-		return SAFE_TYPE_0;
-	}
-
 
 	public static long[] printDifference(long startDate, long endDate){
 
