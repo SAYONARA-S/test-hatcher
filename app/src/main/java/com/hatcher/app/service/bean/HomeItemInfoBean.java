@@ -37,6 +37,10 @@ public class HomeItemInfoBean implements Serializable {
 
     private ArrayList<String> imageURLlist = new ArrayList<String>();
 
+    private ArrayList<FriendItemInfoBean> itemInfoBeanList = new ArrayList<FriendItemInfoBean>();
+
+
+
     public HomeItemInfoBean(JSONObject jsonObject) {
         try {
             this.setHeader(jsonObject.getString("header"));
@@ -88,6 +92,17 @@ public class HomeItemInfoBean implements Serializable {
             e.printStackTrace();
             this.setImageURLlist(null);
         }
+
+        try {
+            JSONArray itemList = jsonObject.getJSONArray("comentList");
+            for (int j = 0; j < itemList.length(); j++) {
+                itemInfoBeanList.add(new FriendItemInfoBean((JSONObject) itemList.get(j)));
+            }
+            this.setItemInfoBeanList(itemInfoBeanList);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            this.setImageURLlist(null);
+        }
     }
 
     public HomeItemInfoBean(int num)
@@ -101,6 +116,10 @@ public class HomeItemInfoBean implements Serializable {
 
         for (int j = 0; j < 4; j++) {
             imageURLlist.add("http://avatar.csdn.net/9/7/0/1_mosibi.jpg");
+        }
+
+        for (int j = 0; j < 4; j++) {
+            itemInfoBeanList.add(new FriendItemInfoBean(j));
         }
     }
 
@@ -158,5 +177,13 @@ public class HomeItemInfoBean implements Serializable {
 
     public void setImageURLlist(ArrayList<String> imageURLlist) {
         this.imageURLlist = imageURLlist;
+    }
+
+    public ArrayList<FriendItemInfoBean> getItemInfoBeanList() {
+        return itemInfoBeanList;
+    }
+
+    public void setItemInfoBeanList(ArrayList<FriendItemInfoBean> itemInfoBeanList) {
+        this.itemInfoBeanList = itemInfoBeanList;
     }
 }

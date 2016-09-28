@@ -101,13 +101,22 @@
                 android:layout_marginLeft="15dp"
             />
             <ImageView
-                android:id="@+id/down_info_layout"
+                android:id="@+id/btn_pull_down"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:layout_below="@+id/btn_comment"
+                android:layout_below="@+id/comment_list"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:src="@drawable/btn_pull_down"/>
+            <ImageView
+                android:id="@+id/btn_pull_up"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_below="@+id/comment_list"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:visibility="gone"
+                android:src="@drawable/btn_pull_up"/>
         </RelativeLayout>
 
     </RelativeLayout>

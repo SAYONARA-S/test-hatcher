@@ -24,11 +24,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.hatcher.app.R;
+import com.hatcher.app.service.bean.FriendItemInfoBean;
 import com.hatcher.app.service.bean.HomeItemInfoBean;
 import com.hatcher.app.service.bean.ImItemInfoBean;
 import com.hatcher.app.service.http.util.HttpUtil;
 import com.hatcher.app.testpic.PublishedActivity;
 import com.hatcher.app.ui.ItemPhotoActivity;
+import com.hatcher.app.ui.PersonInfoActivity;
 import com.hatcher.app.ui.RecommentActivity;
 import com.hatcher.app.ui.SearchActivity;
 import com.hatcher.app.util.CommonUtil;
@@ -290,7 +292,8 @@ public class HomeFragment extends BaseFragment implements OnRefreshListener {
                 mHolder.header = (RoundImageView) view.findViewById(R.id.header);
                 mHolder.image_grid_view = (MyGridView) view.findViewById(R.id.image_grid_view);
                 mHolder.like_layout = (RelativeLayout) view.findViewById(R.id.like_layout);
-                mHolder.down_info_layout = (ImageView) view.findViewById(R.id.down_info_layout);
+                mHolder.btn_pull_down = (ImageView) view.findViewById(R.id.btn_pull_down);
+                mHolder.btn_pull_up = (ImageView) view.findViewById(R.id.btn_pull_up);
                 mHolder.btn_comment = (ImageView) view.findViewById(R.id.btn_comment);
                 mHolder.comment_list = (MyListView) view.findViewById(R.id.comment_list);
                 view.setTag(mHolder);
@@ -313,6 +316,42 @@ public class HomeFragment extends BaseFragment implements OnRefreshListener {
                 }
             });
             Log.e("hatcher","home position " + temp);
+
+            CommentListInfoAdapter commentAdapter = new CommentListInfoAdapter(infoBean.getItemInfoBeanList());
+            final ArrayList<FriendItemInfoBean> commentItemlist = infoBean.getItemInfoBeanList();
+            mHolder.comment_list.setAdapter(commentAdapter);
+
+            if (commentItemlist.size() > 0)
+            {
+                mHolder.btn_pull_down.setVisibility(View.GONE);
+                mHolder.comment_list.setVisibility(View.VISIBLE);
+                mHolder.btn_pull_up.setVisibility(View.VISIBLE);
+
+            }
+            else
+            {
+                mHolder.btn_pull_down.setVisibility(View.GONE);
+                mHolder.comment_list.setVisibility(View.GONE);
+                mHolder.btn_pull_up.setVisibility(View.GONE);
+            }
+
+            mHolder.btn_pull_down.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mHolder.btn_pull_down.setVisibility(View.GONE);
+                    mHolder.comment_list.setVisibility(View.VISIBLE);
+                    mHolder.btn_pull_up.setVisibility(View.VISIBLE);
+                }
+            });
+            mHolder.btn_pull_up.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mHolder.btn_pull_down.setVisibility(View.VISIBLE);
+                    mHolder.comment_list.setVisibility(View.GONE);
+                    mHolder.btn_pull_up.setVisibility(View.GONE);
+                }
+            });
+
             GridAdapter imageAdapter = new GridAdapter(mContext, infoBean.getImageURLlist());
             final ArrayList<String> urllist = infoBean.getImageURLlist();
             mHolder.image_grid_view.setAdapter(imageAdapter);
@@ -352,7 +391,7 @@ public class HomeFragment extends BaseFragment implements OnRefreshListener {
             RoundImageView header;
             MyGridView image_grid_view;
             MyListView comment_list;
-            ImageView btn_comment,down_info_layout;
+            ImageView btn_comment,btn_pull_up,btn_pull_down;
         }
     }
 
@@ -416,5 +455,91 @@ public class HomeFragment extends BaseFragment implements OnRefreshListener {
             ImageView a;
         }
     }
+
+    public class CommentListInfoAdapter extends BaseAdapter {
+
+        List<FriendItemInfoBean> infoList;
+        Activity activity1;
+        LayoutInflater inflater = null;
+        int num = 0;
+
+        public CommentListInfoAdapter(List<FriendItemInfoBean> infoBeanList) {
+            this.infoList = infoBeanList;
+            inflater = LayoutInflater.from(mContext);
+//			activity1 = (Activity) activity;
+        }
+
+        @Override
+        public int getCount() {
+            return infoList == null ? 0 : infoList.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            if (infoList != null && infoList.size() != 0) {
+                return infoList.get(position);
+            }
+            return null;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(final int position, View convertView, ViewGroup parent) {
+            final ViewHolder mHolder;
+            View view = convertView;
+            if (view == null) {
+                view = inflater.inflate(R.layout.item_home_item_comment_list, null);
+                mHolder = new ViewHolder();
+                mHolder.item_layout = (RelativeLayout) view.findViewById(R.id.item_layout);
+                mHolder.item_info_layout = (RelativeLayout) view.findViewById(R.id.item_info_layout);
+                mHolder.my_info_msg = (TextView) view.findViewById(R.id.my_info_msg);
+                mHolder.my_info_text = (TextView) view.findViewById(R.id.my_info_text);
+                mHolder.time = (TextView) view.findViewById(R.id.time);
+                mHolder.header = (RoundImageView) view.findViewById(R.id.header);
+
+                view.setTag(mHolder);
+
+            } else {
+                mHolder = (ViewHolder) view.getTag();
+//                mHolder.ad_item_layout.invalidate();
+//                mHolder.my_info_des.setText(null);
+            }
+
+            final FriendItemInfoBean infoBean = infoList.get(position);
+            final int temp = position;
+            imageLoader.displayImage(infoBean.getHeader(), mHolder.header, options);
+            mHolder.my_info_text.setText(infoBean.getName());
+            mHolder.my_info_msg.setText(infoBean.getMsg());
+            mHolder.time.setText(Options.getLongToDate4(infoBean.getTime()));
+//            if ((position % 2) == 0)
+//            {
+//                mHolder.item_info_layout.setBackgroundColor(getResources().getColor(R.color.white));
+//            }
+//            else
+//            {
+//                mHolder.item_info_layout.setBackgroundColor(getResources().getColor(R.color.nav_im_other_bg));
+//            }
+            mHolder.item_info_layout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(mContext, "" + temp, Toast.LENGTH_SHORT).show();
+//                    Intent intent = new Intent(mContext, PersonInfoActivity.class);
+//                    startActivity(intent);
+                }
+            });
+            return view;
+        }
+
+        class ViewHolder {
+            RelativeLayout item_layout, item_info_layout;
+            TextView my_info_msg, my_info_text, time;
+            RoundImageView header;
+        }
+    }
+
 
 }
