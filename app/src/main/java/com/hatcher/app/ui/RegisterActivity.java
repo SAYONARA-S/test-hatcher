@@ -30,11 +30,15 @@ public class RegisterActivity extends BaseActivity implements OnClickListener {
     @ViewInject
     private ImageView reg_btn;
     @ViewInject
+    private ImageView code_btn;
+    @ViewInject
     private EditText username;
     @ViewInject
     private EditText password;
     @ViewInject
     private EditText fullname;
+    @ViewInject
+    private EditText code_text;
     @ViewInject
     private EditText city;
     @ViewInject
@@ -200,6 +204,7 @@ public class RegisterActivity extends BaseActivity implements OnClickListener {
         female.setOnClickListener(this);
         text2.setOnClickListener(this);
         text4.setOnClickListener(this);
+        code_btn.setOnClickListener(this);
     }
 
     @Override
@@ -234,6 +239,11 @@ public class RegisterActivity extends BaseActivity implements OnClickListener {
 
             }
             break;
+            case R.id.code_btn: {
+
+            }
+            break;
+
             case R.id.reg_btn: {
                 sendRegsiterRequest(userStr, pwdStr, nameStr, cityStr, gender);
             }

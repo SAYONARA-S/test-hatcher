@@ -37,6 +37,7 @@ import com.hatcher.app.util.LoginConfig;
 import com.hatcher.app.util.Options;
 import com.hatcher.app.util.ViewInject;
 import com.hatcher.app.view.MyGridView;
+import com.hatcher.app.view.MyListView;
 import com.hatcher.app.view.OnRefreshListener;
 import com.hatcher.app.view.RefreshListView;
 import com.hatcher.app.view.RoundImageView;
@@ -278,17 +279,20 @@ public class HomeFragment extends BaseFragment implements OnRefreshListener {
             final ViewHolder mHolder;
             View view = convertView;
             if (view == null) {
-                view = inflater.inflate(R.layout.item_home, null);
+                view = inflater.inflate(R.layout.item_home_new, null);
                 mHolder = new ViewHolder();
                 mHolder.item_layout = (FrameLayout) view.findViewById(R.id.item_layout);
                 mHolder.item_info_layout = (RelativeLayout) view.findViewById(R.id.item_info_layout);
                 mHolder.my_info_msg = (TextView) view.findViewById(R.id.my_info_msg);
                 mHolder.my_info_text = (TextView) view.findViewById(R.id.my_info_text);
+                mHolder.my_info_info = (TextView) view.findViewById(R.id.my_info_info);
+                mHolder.like_num = (TextView) view.findViewById(R.id.like_num);
                 mHolder.header = (RoundImageView) view.findViewById(R.id.header);
                 mHolder.image_grid_view = (MyGridView) view.findViewById(R.id.image_grid_view);
-                mHolder.layout1 = (LinearLayout) view.findViewById(R.id.layout1);
-                mHolder.layout2 = (LinearLayout) view.findViewById(R.id.layout2);
-                mHolder.layout3 = (LinearLayout) view.findViewById(R.id.layout3);
+                mHolder.like_layout = (RelativeLayout) view.findViewById(R.id.like_layout);
+                mHolder.down_info_layout = (ImageView) view.findViewById(R.id.down_info_layout);
+                mHolder.btn_comment = (ImageView) view.findViewById(R.id.btn_comment);
+                mHolder.comment_list = (MyListView) view.findViewById(R.id.comment_list);
                 view.setTag(mHolder);
 
             } else {
@@ -325,25 +329,30 @@ public class HomeFragment extends BaseFragment implements OnRefreshListener {
                     startActivity(intent);
                 }
             });
-            mHolder.layout3.setOnClickListener(new View.OnClickListener() {
+            mHolder.btn_comment.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(activity, RecommentActivity.class);
-                    intent.putStringArrayListExtra("urllist", urllist);
                     startActivity(intent);
                 }
             });
+            mHolder.like_layout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
+                }
+            });
             return view;
         }
 
         class ViewHolder {
             FrameLayout item_layout;
-            RelativeLayout item_info_layout;
-            TextView my_info_msg, my_info_text;
+            RelativeLayout item_info_layout,like_layout;
+            TextView my_info_msg, my_info_text,my_info_info,like_num;
             RoundImageView header;
             MyGridView image_grid_view;
-            LinearLayout layout1,layout2,layout3;
+            MyListView comment_list;
+            ImageView btn_comment,down_info_layout;
         }
     }
 

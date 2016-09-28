@@ -163,11 +163,54 @@
             android:scaleType="fitCenter"
             android:src="@drawable/login_edit_bg" />
 
+        <RelativeLayout
+            android:id="@+id/code_layout"
+            android:layout_width="225dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line4"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dip"
+            android:background="@null">
+
+            <EditText
+                android:id="@+id/code_text"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:background="@null"
+                android:gravity="center"
+                android:hint="手机验证码"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textColorHint="@color/nav_hint_bg"
+                android:textSize="15dp" />
+
+            <ImageView
+                android:id="@+id/line6"
+                android:layout_width="132dp"
+                android:layout_height="6dp"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/code_text"
+                android:layout_marginTop="2dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/login_edit_bg_short" />
+
+            <ImageView
+                android:id="@+id/code_btn"
+                android:layout_width="82dp"
+                android:layout_height="27dp"
+                android:layout_alignParentRight="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/selector_code" />
+
+        </RelativeLayout>
+
         <ImageView
             android:id="@+id/reg_btn"
             android:layout_width="225dp"
             android:layout_height="30dp"
-            android:layout_below="@+id/line4"
+            android:layout_below="@+id/code_layout"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="8dip"
             android:scaleType="fitCenter"

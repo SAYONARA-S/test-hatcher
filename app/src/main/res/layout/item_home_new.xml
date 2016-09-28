@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@null"
+    android:clickable="true">
+
+    <RelativeLayout
+        android:id="@+id/item_info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:id="@+id/up_info_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            >
+
+            <RelativeLayout
+                android:id="@+id/my_info_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginLeft="80dp"
+                >
+
+                <TextView
+                    android:id="@+id/my_info_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:text="正大光明"
+                    android:textColor="@color/black"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/my_info_info"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/my_info_text"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="3dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="asdfaasdfasdfasdfsdfasdf，吃什么？"
+                    android:textColor="@color/nav_home_msg_text_bg"
+                    android:textSize="10dp" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/my_info_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/my_info_layout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:text="今天晚上去哪啊今天晚上去哪啊今天晚上去哪啊今天晚上去哪啊今天晚上去哪啊今天晚上去哪啊今天晚上去哪啊今天晚上去哪啊今天晚上去哪啊今天晚上去哪啊今天晚上去哪啊今天晚上去哪啊，吃什么？"
+                android:textColor="@color/nav_home_msg_text_bg"
+                android:textSize="12dp" />
+
+            <com.hatcher.app.view.MyGridView
+                android:id="@+id/image_grid_view"
+                android:layout_width="280dp"
+                android:layout_height="70dp"
+                android:layout_below="@+id/my_info_msg"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="6dp"
+                android:fastScrollEnabled="false"
+                android:horizontalSpacing="5px"
+                android:numColumns="4"
+                android:verticalSpacing="5px" />
+
+            <ImageView
+                android:id="@+id/btn_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/image_grid_view"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/btn_comment" />
+            <com.hatcher.app.view.MyListView
+                android:id="@+id/comment_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_comment"
+                android:background="@null"
+                android:divider="@null"
+                android:dividerHeight="0px"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+            />
+            <ImageView
+                android:id="@+id/down_info_layout"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_below="@+id/btn_comment"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/btn_pull_down"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/header_layout"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="left|top"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/icon_head_bg">
+
+        <com.hatcher.app.view.RoundImageView
+            android:id="@+id/header"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_centerInParent="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/default_header" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|top"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="20dp">
+        <RelativeLayout
+            android:id="@+id/like_layout"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/icon_head_bg">
+
+            <com.hatcher.app.view.RoundImageView
+                android:id="@+id/icon_like"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/btn_like_normal" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/like_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/like_layout"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="12341"
+            android:textColor="@color/nav_home_msg_text_bg"
+            android:textSize="10dp" />
+    </RelativeLayout>
+
+</FrameLayout>
